@@ -2,7 +2,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QMessageBox
 from GUI.main_gui import MainWindow
-from GUI.style_window import CONST_PASSWORD_WINDOW
+from GUI.style_window import CONST_PASSWORD_WINDOW, POP_UPS
 
 class PasswordWindow(QMainWindow):
     def __init__(self) -> None:
@@ -37,6 +37,7 @@ class PasswordWindow(QMainWindow):
             examination = self.entering_password.text()
         except:
                self.error = QMessageBox()
+               self.error.setStyleSheet(POP_UPS)
                self.error.setWindowTitle("Ошибка")
                self.error.setText("Ошибка считывания")
                self.error.show()
@@ -51,6 +52,7 @@ class PasswordWindow(QMainWindow):
             self.run = MainWindow()
         else:
             self.error = QMessageBox()
+            self.error.setStyleSheet(POP_UPS)
             self.error.setWindowTitle("Ошибка")
             self.error.setText("Неверный пароль")
             
