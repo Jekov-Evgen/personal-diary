@@ -14,6 +14,8 @@ class ViewWindow(QMainWindow):
         
         records = get_data_bd()
         
+        records = list(reversed(records))
+        
         central_widget = QWidget()
         main_layout = QVBoxLayout()
         
