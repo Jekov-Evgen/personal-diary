@@ -1,11 +1,13 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QPushButton, QLabel, QVBoxLayout
+from GUI.style_window import CONST_MAIN_WINDOW
 
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.setWindowTitle("Личный дневник")
-        self.setFixedSize(400, 150)
+        self.setFixedSize(500, 300)
+        self.setStyleSheet(CONST_MAIN_WINDOW)
         
         central_widget = QWidget()
         control_UI = QVBoxLayout()

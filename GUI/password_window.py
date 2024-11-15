@@ -1,12 +1,14 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QMessageBox
 from GUI.main_gui import MainWindow
+from GUI.style_window import CONST_PASSWORD_WINDOW
 
 class PasswordWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.setWindowTitle("Ввод пароля")
         self.setFixedSize(300, 150)
+        self.setStyleSheet(CONST_PASSWORD_WINDOW)
         
         control_UI = QVBoxLayout()
         central_widget = QWidget()
