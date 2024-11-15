@@ -39,11 +39,19 @@ class PasswordWindow(QMainWindow):
                self.error = QMessageBox()
                self.error.setWindowTitle("Ошибка")
                self.error.setText("Ошибка считывания")
+               self.error.show()
                
-        if examination == '1111':
+        res_ex = 0
+        
+        for i in range(len(examination)):
+            res_ex += ord(examination[i])
+        
+        if res_ex == 700:
             self.hide()
             self.run = MainWindow()
         else:
             self.error = QMessageBox()
             self.error.setWindowTitle("Ошибка")
             self.error.setText("Неверный пароль")
+            
+            self.error.show()
