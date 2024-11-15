@@ -126,3 +126,50 @@ CONST_ADD_WINDOW = """
                 background-color: #ab47bc;
             }
         """
+        
+CONST_VIEW_WINDOW = """
+            QMainWindow {
+                background-color: #fbe8f9;
+            }
+            QLabel {
+                color: #6a1b9a;
+                font-size: 14px;
+                font-family: 'Segoe UI', sans-serif;
+                padding: 5px;
+            }
+            QLabel.date {
+                background-color: #ffffff;
+                border: 1px solid #ba68c8;
+                border-radius: 5px;
+                padding: 10px;
+                min-width: 150px;
+                text-align: center;
+            }
+            QLabel.text {
+                background-color: #ffffff;
+                border: 1px solid #ab47bc;
+                border-radius: 5px;
+                padding: 10px;
+                min-width: 300px;
+            }
+            QScrollArea {
+                background-color: #ffffff;
+                border: 1px solid #ba68c8;
+                border-radius: 5px;
+            }
+            QScrollBar:vertical {
+                background: #e1bee7;
+                width: 10px;
+                margin: 0;
+            }
+            QScrollBar::handle:vertical {
+                background: #ba68c8;
+                border-radius: 5px;
+            }
+            QScrollBar::handle:vertical:hover {
+                background: #ab47bc;
+            }
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+                background: none;
+            }
+        """

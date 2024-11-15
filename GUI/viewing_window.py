@@ -2,12 +2,14 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QMainWindow, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QScrollArea
 from Logics.database_work import get_data_bd
+from GUI.style_window import CONST_VIEW_WINDOW
 
 class ViewWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.setFixedSize(500, 500)
         self.setWindowTitle("Окно просмотра")
+        self.setStyleSheet(CONST_VIEW_WINDOW)
         self.setWindowIcon(QIcon(r"image\icon.png"))
         
         records = get_data_bd()
