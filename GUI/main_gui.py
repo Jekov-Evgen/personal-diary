@@ -2,6 +2,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QMainWindow, QWidget, QPushButton, QLabel, QVBoxLayout
 from GUI.style_window import CONST_MAIN_WINDOW
+from GUI.add_window import AddWindow
 
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
@@ -11,11 +12,16 @@ class MainWindow(QMainWindow):
         self.setStyleSheet(CONST_MAIN_WINDOW)
         self.setWindowIcon(QIcon(r'image\icon.png'))
         
+        self.add = None
+        
         central_widget = QWidget()
         control_UI = QVBoxLayout()
         
         greetings = QLabel(text="Приветсвую вас в приложении ведения секретного дневника")
+        
         add_entry = QPushButton(text="Добавить запись")
+        add_entry.clicked.connect(self.add_record)
+        
         see_all_posts = QPushButton(text="Просмотреть все записи")
         
         control_UI.addWidget(greetings, alignment=Qt.AlignmentFlag.AlignCenter)
@@ -26,3 +32,8 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central_widget)
         
         self.show()
+        
+        
+    def add_record(self):
+        self.hide()
+        self.add = AddWindow()
