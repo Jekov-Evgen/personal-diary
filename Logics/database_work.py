@@ -35,3 +35,12 @@ def get_data_bd():
     
     connect.close()
     return result
+
+def del_bd():
+    connect = sqlite3.connect("records.db")
+    cursor = connect.cursor()
+    
+    cursor.execute("""DELETE FROM records""")
+    
+    connect.commit()
+    connect.close()

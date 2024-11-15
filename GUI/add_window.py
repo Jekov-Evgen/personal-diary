@@ -18,7 +18,9 @@ class AddWindow(QMainWindow):
         
         add_your_entry = QLabel("Добавление записи")
         self.record = QLineEdit()
+        
         add_button = QPushButton("Добавить запись")
+        add_button.clicked.connect(self.adding_an_entry)
         
         control_UI.addWidget(add_your_entry, alignment=Qt.AlignmentFlag.AlignCenter)
         control_UI.addWidget(self.record)
@@ -32,6 +34,9 @@ class AddWindow(QMainWindow):
     def adding_an_entry(self):
         add_text = self.record.text()
         
-        date_PC = None
+        today = date.today()
+        date_PC = today.strftime("%d/%m/%Y")
         
         insert_to_bd(date_PC, add_text)
+        
+        
