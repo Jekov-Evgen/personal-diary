@@ -38,6 +38,7 @@ class PasswordWindow(QMainWindow):
         except:
                self.error = QMessageBox()
                self.error.setStyleSheet(POP_UPS)
+               self.setWindowIcon(QIcon(r'image\icon.png'))
                self.error.setWindowTitle("Ошибка")
                self.error.setText("Ошибка считывания")
                self.error.show()
@@ -53,6 +54,7 @@ class PasswordWindow(QMainWindow):
         else:
             self.error = QMessageBox()
             self.error.setStyleSheet(POP_UPS)
+            self.setWindowIcon(QIcon(r'image\icon.png'))
             self.error.setWindowTitle("Ошибка")
             self.error.setText("Неверный пароль")
             
