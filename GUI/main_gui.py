@@ -3,6 +3,7 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QMainWindow, QWidget, QPushButton, QLabel, QVBoxLayout
 from GUI.style_window import CONST_MAIN_WINDOW
 from GUI.add_window import AddWindow
+from GUI.viewing_window import ViewWindow
 
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
@@ -13,6 +14,7 @@ class MainWindow(QMainWindow):
         self.setWindowIcon(QIcon(r'image\icon.png'))
         
         self.add = None
+        self.see = None
         
         central_widget = QWidget()
         control_UI = QVBoxLayout()
@@ -23,6 +25,7 @@ class MainWindow(QMainWindow):
         add_entry.clicked.connect(self.add_record)
         
         see_all_posts = QPushButton(text="Просмотреть все записи")
+        see_all_posts.clicked.connect(self.see_all)
         
         control_UI.addWidget(greetings, alignment=Qt.AlignmentFlag.AlignCenter)
         control_UI.addWidget(add_entry)
@@ -37,3 +40,7 @@ class MainWindow(QMainWindow):
     def add_record(self):
         self.hide()
         self.add = AddWindow()
+        
+    def see_all(self):
+        self.hide()
+        self.see = ViewWindow()
