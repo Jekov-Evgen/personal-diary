@@ -2,6 +2,8 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QMainWindow, QWidget, QPushButton, QLabel, QVBoxLayout, QLineEdit
 from GUI.style_window import CONST_ADD_WINDOW
+from datetime import date
+from Logics.database_work import insert_to_bd
 
 class AddWindow(QMainWindow):
     def __init__(self) -> None:
@@ -26,3 +28,10 @@ class AddWindow(QMainWindow):
         self.setCentralWidget(central_widget)
         
         self.show()
+        
+    def adding_an_entry(self):
+        add_text = self.record.text()
+        
+        date_PC = None
+        
+        insert_to_bd(date_PC, add_text)
